@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Lato:300i,400');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+
+$yellow: #ffdd66;
+$blue: #0066dd;
+$purple: #dd0066;
+
+$dark-grey: #333333;
+$grey: #666666;
+$light-grey: #dfdfdf;
+$lighter-grey: #f8f8f8;
+
+$font-size: 1.25em;
+$font-size-l: $font-size * 1.1;
+$font-size-s: $font-size * 0.9;
+$font-size-xs: $font-size * 0.8;
+
+$spacing-s: 0.5em;
+$spacing: 1em;
+$spacing-l: 2em;
+
+$roundness: 4px;
+
+@import 'highlight';
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  color: $dark-grey;
+  font-family: 'Lato', sans-serif;
+  font-size: $font-size;
+  @media (max-width: 980px) { font-size: $font-size-s; }
+  @media (max-width: 660px) { font-size: $font-size-xs; }
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bree Serif', serif;
+  font-weight: normal;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1.75em;
+}
+
+main, footer {
+  max-width: 660px;
+  margin: $spacing-l auto;
+  padding: 0 $spacing;
+}
+
+footer {
+  text-align: center;
+  text-transform: lowercase;
+  font-variant: all-small-caps;
+  small {
+    font-size: 80%;
+  }
+}
+
+blockquote {
+  border-left: $roundness solid $yellow;
+  margin: 0;
+  padding-left: $spacing;
+  font-weight: 300;
+  font-style: italic;
+  font-size: $font-size-l;
+  color: $grey;
+  border-radius: $roundness;
+}
+
+.stripe {
+  height: $roundness;
+  background-color: $yellow;
+}
+
+p {
+  line-height: 1.6;
+  margin: $spacing 0;
+}
+
+figure {
+  margin: $spacing 0;
+}
+
+ul, ol {
+  padding-left: $spacing-l;
+}
+li {
+  margin-bottom: $spacing-s;
+}
+
+a {
+  color: $blue;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+code {
+  font-size: 80%;
+  font-family: 'Fira Mono', monospace;
+}
+
+p > code {
+  background-color: $lighter-grey;
+  color: $purple;
+  border: 1px solid $light-grey;
+
+  border-radius: $roundness;
+  padding: 2px 4px;
+}
+
+hr {
+  border: none;
+  border-top: 1px dotted $light-grey;
+  margin: $spacing-l auto;
+}
+
+.fancy {
+  text-align: center;
+  border-bottom: 1px dotted $light-grey;
+  margin: 4.5em auto 3.5em;
+}
+
+.fancy time, .fancy span {
+  display: inline-block;
+  position: relative;
+  top: 0.5em;
+  background: #ffffff;
+  text-transform: lowercase;
+  font-variant: all-small-caps;
+  font-size: 85%;
+  text-align: center;
+  font-weight: normal;
+  font-style: italic;
+  padding: 0 $spacing;
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
+pre {
+  border-radius: $roundness;
+  margin: $spacing auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: $spacing;
+  line-height: 1.5;
+  background: #282c34;
+  color: #abb2bf;
+}
