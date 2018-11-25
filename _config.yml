@@ -1,0 +1,16 @@
+# Title of the blog (visible on home page and in footer)
+# title: "Zero"
+
+# Description of the blog (visible on home page)
+# description: "Jekyll Zero theme"
+
+# Name of the author (visible in footer)
+# author: ""
+
+# URL and baseurl of the blog (automatically set by GitHub)
+# url: "https://example.com"
+# baseurl: "/blog"
+
+permalink: "/:slug"
+sass:
+  style: :compressed
