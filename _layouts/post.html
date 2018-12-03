@@ -6,7 +6,8 @@ layout: default
   <div class="fancy">
     <time datetime="{{ page.date | date_to_xmlschema }}">
       {{ page.date | date: "%-d %B %Y" }}
-      <!-- {{ page.content | number_of_words | divided_by: 275 | plus: 1 }} min read -->
+      &bull;
+      {{ page.content | number_of_words | divided_by: 275 | plus: 1 }} min read
     </time>
   </div>
 
