@@ -33,6 +33,7 @@ body {
   --code-text: #dd0066;
   --codeblock-bg: #282c34;
   --codeblock-text: #abb2bf;
+  --highlight-bg: #fcf6e3;
 
   background-color: var(--background);
   color: var(--main-text);
@@ -56,6 +57,7 @@ body {
     --code-line: #000000;
     --code-text: #ff0077;
     --codeblock-bg: #111111;
+    --highlight-bg: #302f2c;
   }
 }
 
@@ -95,17 +97,6 @@ footer {
   }
 }
 
-blockquote {
-  border-left: $roundness solid var(--theme);
-  margin: 0;
-  padding-left: $spacing;
-  font-weight: 300;
-  font-style: italic;
-  font-size: $font-size-l;
-  color: var(--dim-text);
-  border-radius: $roundness;
-}
-
 .stripe {
   height: $roundness;
   background-color: var(--theme);
@@ -114,6 +105,22 @@ blockquote {
 p {
   line-height: 1.6;
   margin: $spacing 0;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+blockquote p:first-child {
+  margin-top: 0;
+}
+
+blockquote {
+  background-color: var(--highlight-bg);
+  margin: $spacing 0;
+  padding: $spacing;
+  font-weight: 300;
+  font-style: italic;
+  border-radius: $roundness;
 }
 
 img {
