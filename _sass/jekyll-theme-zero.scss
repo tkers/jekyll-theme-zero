@@ -151,7 +151,7 @@ code {
   font-family: 'Fira Mono', monospace;
 }
 
-p > code {
+p > code, li > code {
   background-color: var(--code-bg);
   color: var(--code-text);
   border: 1px solid var(--code-line);
