@@ -1,16 +1,16 @@
 # Title of the blog (visible on home page and in footer)
-# title: "Zero"
+# title: 'Zero'
 
 # Description of the blog (visible on home page)
-description: ""
+# description: ''
 
 # Name of the author (visible in footer)
-# author: ""
+# author: ''
 
 # URL and baseurl of the blog (automatically set by GitHub)
-# url: "https://example.com"
-# baseurl: "/blog"
+# url: 'https://example.com'
+# baseurl: '/blog'
 
-permalink: "/:slug"
+permalink: '/:slug'
 sass:
   style: :compressed

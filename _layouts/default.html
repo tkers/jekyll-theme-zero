@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffdd66" />
+    <meta name="theme-color" content="#fffefa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#19191a" media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" type="text/css" href="{{ '/assets/css/style.css' | relative_url }}" />
   </head>
   <body>
@@ -16,7 +17,8 @@
       {{ content }}
     </main>
     <footer>
-      <small><a href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a> &lt;/&gt; {{ site.author | default: site.github.owner_name }}</small>
+      <hr/>
+      <small><a href="{{ site.url }}{{ site.baseurl }}">{{ site.title | default: site.github.repo_name }}</a> &lt;/&gt; {{ page.author | default: site.author | default: site.github.owner_name }}</small>
     </footer>
   </body>
 </html>

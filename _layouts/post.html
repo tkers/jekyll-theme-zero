@@ -4,11 +4,15 @@ layout: default
 
 <article>
   <div class="fancy">
-    <time datetime="{{ page.date | date_to_xmlschema }}">
-      {{ page.date | date: "%-d %B %Y" }}
-      &bull;
-      {{ page.content | number_of_words | divided_by: 275 | plus: 1 }} min read
-    </time>
+    <span>
+        {% if page.description %}
+          <small>{{ page.description }}</small>
+        {% else %}
+          <small>{{ page.date | date: "%-d %B %Y" }}</small>
+          <small>{{ page.emoji | default: "&middot;" }}</small>
+          <small>{{ page.content | number_of_words | divided_by: 250 | plus: 1 }} min read</small>
+        {% endif %}
+    </span>
   </div>
 
   <h1{% if page.subtitle %} class="has-subtitle"{% endif %}>{{ page.title }}</h1>
@@ -17,6 +21,4 @@ layout: default
   <section>
     {{ content }}
   </section>
-
-  <hr />
 </article>

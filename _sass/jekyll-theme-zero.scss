@@ -1,100 +1,133 @@
-@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
-@import url('https://fonts.googleapis.com/css?family=Lato:300i,400');
+@import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono');
 
-$font-size: 1.25em;
-$font-size-l: $font-size * 1.1;
-$font-size-s: $font-size * 0.9;
-$font-size-xs: $font-size * 0.8;
-
-$spacing-s: 0.5em;
-$spacing: 1em;
-$spacing-l: 2em;
-
-$roundness: 4px;
+$vertical-margin: 1.5rem;
+$roundness: 0.2rem;
 
 @import 'highlight';
 
-html, body {
+html {
+  font-size: 20px;
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+
+  --theme: #ffdd66;
+  --background: #fffefa;
+  --main-text: #333333;
+  --bold-text: #000000;
+  --dim-text: #7a7a7a;
+  --line: #c7c7c7;
+  --link-text: #0071b3;
+  --code-bg: #ffe999;
+  --code-line: var(--background);
+  --code-text: #1a1a1a;
+  --codeblock-bg: #282c34;
+  --codeblock-text: #abb2bf;
+  --highlight-bg: #fcf3cf;
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      --background: #19191a;
+      --main-text: #cccccc;
+      --bold-text: #e6e6e6;
+      --dim-text: #808080;
+      --line: #4d4d4d;
+      --link-text: #008ee6;
+      --code-bg: #111111;
+      --code-line: #000000;
+      --code-text: #ffdd66;
+      --codeblock-bg: #111111;
+      --highlight-bg: #222222;
+    }
+  }
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  --theme: #ffdd66;
-  --background: #ffffff;
-  --main-text: #333333;
-  --bold-text: #000000;
-  --dim-text: #666666;
-  --line: #dddddd;
-  --link-text: #0077bb;
-  --code-bg: #f8f8f8;
-  --code-line: #dfdfdf;
-  --code-text: #dd0066;
-  --codeblock-bg: #282c34;
-  --codeblock-text: #abb2bf;
-  --highlight-bg: #fcf6e3;
-
   background-color: var(--background);
   color: var(--main-text);
   font-family: 'Lato', sans-serif;
-  font-size: $font-size;
-  @media (max-width: 980px) { font-size: $font-size-s; }
-  @media (max-width: 660px) { font-size: $font-size-xs; }
+
+  text-align: justify;
+  @media (max-width: 480px) {
+    text-align: left;
+  }
+
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    --background: #222222;
-    --main-text: #dddddd;
-    --bold-text: #ffffff;
-    --dim-text: #777777;
-    --line: #444444;
-    --link-text: #0088dd;
-    --code-bg: #111111;
-    --code-line: #000000;
-    --code-text: #ff0077;
-    --codeblock-bg: #111111;
-    --highlight-bg: #302f2c;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--bold-text);
-  font-family: 'Bree Serif', serif;
-  font-weight: normal;
-  text-align: center;
+  font-family: 'Neuton', serif;
+  font-weight: 700;
 }
 
 h1 {
-  font-size: 2em;
-  margin-bottom: 1.75em;
+  text-align: center;
+  font-size: 2.6rem;
+  margin: 3rem 0 3rem;
+  @media (max-width: 480px) {
+    font-size: 2.1rem;
+  }
+}
+h2 {
+  font-size: 1.6rem;
+  margin: 2.5rem 0 1rem;
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+h3 {
+  font-size: 1.2rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 h1.has-subtitle {
+  margin-top: 3rem;
   margin-bottom: 0;
   & + h2 {
-    font-size: 1.25em;
     margin-top: 0;
-    margin-bottom: 2.25em;
+    margin-bottom: 3rem;
+    text-align: center;
   }
 }
 
-main, footer {
-  max-width: 660px;
-  margin: $spacing-l auto;
-  padding: 0 $spacing;
+main,
+footer {
+  max-width: 35rem;
+  margin: $vertical-margin auto;
+  padding: 0 1rem;
 }
 
 footer {
+  margin-bottom: 2rem;
   text-align: center;
-  text-transform: lowercase;
+}
+
+small {
+  font-size: 0.7rem;
   font-variant: all-small-caps;
-  small {
-    font-size: 80%;
-  }
+  text-transform: lowercase;
 }
 
 .stripe {
@@ -102,9 +135,21 @@ footer {
   background-color: var(--theme);
 }
 
-p {
-  line-height: 1.6;
-  margin: $spacing 0;
+p,
+ul,
+ol,
+div,
+pre,
+img,
+figure,
+blockquote {
+  margin: 0 0 $vertical-margin;
+}
+
+p,
+li {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
 }
 
 blockquote p:last-child {
@@ -116,8 +161,7 @@ blockquote p:first-child {
 
 blockquote {
   background-color: var(--highlight-bg);
-  margin: $spacing 0;
-  padding: $spacing;
+  padding: 1rem;
   font-weight: 300;
   font-style: italic;
   border-radius: $roundness;
@@ -127,15 +171,12 @@ img {
   max-width: 100%;
 }
 
-figure {
-  margin: $spacing 0;
-}
-
-ul, ol {
-  padding-left: $spacing-l;
+ul,
+ol {
+  padding-left: 2rem;
 }
 li {
-  margin-bottom: $spacing-s;
+  margin-bottom: 0.2rem;
 }
 
 a {
@@ -147,54 +188,54 @@ a {
 }
 
 code {
-  font-size: 80%;
+  font-size: 0.85rem;
+  line-height: 1.2rem;
   font-family: 'Fira Mono', monospace;
 }
 
-p > code, li > code {
+p > code,
+li > code {
   background-color: var(--code-bg);
   color: var(--code-text);
   border: 1px solid var(--code-line);
-
   border-radius: $roundness;
-  padding: 2px 4px;
+  padding: 0.1rem 0.2rem;
 }
 
 hr {
   border: none;
-  border-top: 1px dotted var(--line);
-  margin: $spacing-l auto;
+  border-top: 1px dashed var(--line);
+  margin: $vertical-margin auto;
 }
 
 .fancy {
   text-align: center;
-  border-bottom: 1px dotted var(--line);
-  margin: 4.5em auto 3.5em;
+  border-bottom: 1px dashed var(--line);
+  margin: 3rem auto 0;
 }
 
-.fancy time, .fancy span {
+.fancy span {
   display: inline-block;
-  position: relative;
-  top: 0.5em;
+  color: var(--dim-text);
   background: var(--background);
-  text-transform: lowercase;
-  font-variant: all-small-caps;
-  font-size: 85%;
-  text-align: center;
-  font-weight: normal;
-  font-style: italic;
-  padding: 0 $spacing;
-  text-transform: none;
-  letter-spacing: 1px;
+  padding: 0 0.5rem;
+  position: relative;
+  top: 0.4rem;
 }
 
 pre {
-  border-radius: $roundness;
-  margin: $spacing auto;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: $spacing;
-  line-height: 1.5;
   background-color: var(--codeblock-bg);
   color: var(--codeblock-text);
+  padding: 1rem;
+  border-radius: $roundness;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+pre,
+blockquote {
+  @media (max-width: 480px) {
+    margin: 0 -1rem $vertical-margin;
+    border-radius: 0;
+  }
 }
