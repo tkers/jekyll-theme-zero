@@ -3,11 +3,10 @@ layout: default
 ---
 
 <div class="fancy">
-  <span>{{ site.description }}</span>
+  <small>{{ page.description | default: site.description }}</small>
 </div>
 
-<h1{% if site.description %} class="has-subtitle"{% endif %}>{{ site.title }}</h1>
-{% if site.description %}<h2>{{ site.description }}</h2>{% endif %}
+<h1>{{ page.title | default: site.title }}</h1>
 
 {{ content }}
 
@@ -15,8 +14,7 @@ layout: default
   {% for post in site.posts %}
   <li>
     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    ({{ post.date | date: "%-d&nbsp;%b&nbsp;%Y" }})
   </li>
   {% endfor %}
 </ul>
-
-<hr />
